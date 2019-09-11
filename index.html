@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <!-- Css -->
+    <link rel="stylesheet" href="https://unpkg.com/efrolic@0.2.9/dist/css/efrolic.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styless.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="barra">
+            <nav class="navegacion">
+                <a href="enlace.html">Noticias</a>
+                <a href="enlace.html">Tecnología</a>
+                <a href="enlace.html">Youtube</a>
+                <a href="enlace.html">Redes Sociales</a>
+            </nav>
+        </div>
+    </header>
+
+    <h1 class="central-texto">Llena el Formnulario de Contacto</h1>
+
+    <main class="contenedor contenido-centrado seccion">
+        <form action="" id="myForm">
+            <fieldset>
+                <legend>Formulario</legend>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" placeholder="Tu nombre" min="3">
+
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" placeholder="Tu apellido" >
+
+                <label for="edad">Edad:</label>
+                <input type="number" min="0" id="edad" placeholder="0" >
+
+                <label for="cedula">Cedula o Pasaporte:</label>
+                <input type="text" id="cedula" placeholder="Tu cedudula o Pasaporte" >
+
+                <p>Sexo</p>
+                <div class="forma-contacto">
+                    <label for="masculino">Masculino:</label>
+                    <input type="radio" name="sexo" id="masculino" >
+                    <label for="femenino">Femenino:</label>
+                    <input type="radio" name="sexo" id="femenino">
+                </div>
+            </fieldset>
+            
+            <input type="submit" value="Enviar" class="btn btn-primario" id="enviar">
+            <input type="button" value="Limpiar" class="btn btn-secundario" id="limpiar">
+
+        </form>
+    </main>
+
+    <script src="js/code.js"></script>
+    
+</body>
+</html>
