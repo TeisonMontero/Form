@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Formulario</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <!-- Css -->
     <link rel="stylesheet" href="https://unpkg.com/efrolic@0.2.9/dist/css/efrolic.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
@@ -32,16 +30,16 @@
             <fieldset>
                 <legend>Formulario</legend>
                 <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" placeholder="Tu nombre">
+                <input type="text" id="nombre" placeholder="Tu nombre" maxlength="15" pattern="[A-Za-z]{3,30}" title="Introduce mas de 2 letras" required>
 
                 <label for="apellido">Apellido:</label>
-                <input type="text" id="apellido" placeholder="Tu apellido" >
+                <input type="text" id="apellido" placeholder="Tu apellido" maxlength="15" pattern="[A-Za-z]{3,30}" title="Introduce mas de 2 letras" required>
 
                 <label for="edad">Edad:</label>
-                <input type="number" min="0" id="edad" placeholder="0" >
+                <input type="number" min="18" max="100" id="edad" placeholder="0" required>
 
                 <label for="cedula">Cedula o Pasaporte:</label>
-                <input type="text" id="cedula" placeholder="Tu cedudula o Pasaporte" >
+                <input type="text" id="cedula" placeholder="Tu cedudula o Pasaporte" pattern="[0-9]{11}" required>
 
                 <p>Sexo</p>
                 <div class="forma-contacto">

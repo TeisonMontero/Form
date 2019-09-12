@@ -9,7 +9,7 @@ function limpiarForm(){
 
 // validar formulario
 
-var myForm = document.getElementById("myForm");
+let myForm = document.getElementById("myForm");
 
 window.onload = iniciar;
 
@@ -23,8 +23,13 @@ function campoVacio(identificador){
 
   linmpiarError(elemento);
 
-  if(elemento.value == ""){
-    alert("El campo " + identificador + " no puede estar vacio");
+  if(!elemento.checkValidity()){
+    if(elemento.validity.valueMissing){
+      alert("El campo " + identificador + " no puede estar vacio");
+    }
+    if(elemento.validity.patternMismatch){
+      alert("El " + identificador + " debe tener entre 3 y 30 caracteres");
+    }
     error(elemento);
     return false;
   }
@@ -37,8 +42,19 @@ function validarNumero(identificador){
 
   linmpiarError(elemento);
 
-  if(elemento.value == ""){
-    alert("El campo " + identificador + " no puede estar vacio");
+  if(!elemento.checkValidity()){
+    if(elemento.validity.valueMissing){
+      alert("El campo " + identificador + " no puede estar vacio");
+    }
+    if(elemento.validity.rangeUnderflow){
+      alert("La " + identificador + " debe ser mayor a 18");
+    }
+    if(elemento.validity.rangeOverflow){
+      alert("La " + identificador + " debe ser menor a 100");
+    }
+    if(elemento.validity.patternMismatch){
+      alert("El " + identificador + " debe tener 11 caracteres sin guiones");
+    }
     error(elemento);
     return false;
   }
@@ -50,7 +66,7 @@ function validarNumero(identificador){
 }
 
 function validar(e){
-  if(campoVacio("nombre") && campoVacio("apellido") && validarNumero("edad") && validarNumero("cedula") && confirm("Pulsa aceptar si quieres enviar el formulario")){
+  if(campoVacio("nombre") && campoVacio("apellido") && validarNumero("edad") && validarNumero("cedula") && confirm("Pulsa aceptar si deseas enviar el formulario")){
     return true;
   }
   else {
@@ -60,7 +76,9 @@ function validar(e){
 }
 
 function error(elemento){
-  elemento.className = "error";
+  document.getElementById("mensajeError").innerHTML =
+  elemento.validationMessage;
+  elemento.className = "blue-gradient";
   elemento.focus();
 }
 
