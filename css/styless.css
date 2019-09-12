@@ -1,5 +1,12 @@
 body{
     font-family: 'Lato', sans-serif;
+    background: #304352;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #d7d2cc, #304352);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #d7d2cc, #304352); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+h1{
+    color: #000000;
 }
 .contenedor{
     width: 95%;
@@ -22,12 +29,14 @@ body{
     color: #ffffff;
     text-decoration: none;
     margin-right: 15px;
+    transition: 0.3s;
 }
 .navegacion a:last-of-type{
     margin: 0;
 }
 .navegacion a:hover{
-    color:  #E08709;
+    transform: scale(1.2);
+    color:  #1c3b53;
 }
 
 /* Formulario */
@@ -54,12 +63,19 @@ body{
     width: 100px;
     border-radius: 4px;
     border: none;
+    transition: 0.3s;
 }
 .btn-primario{
-    background-color: #71B100;
+    background-color: #304352;
+}
+.btn-primario:hover{
+    transform: scale(1.1);
 }
 .btn-secundario{
-    background-color: #E08709;
+    background-color: #3b4750;
+}
+.btn-secundario:hover{
+    transform: scale(1.1);
 }
 
 /* Formulario */
@@ -72,10 +88,11 @@ form p{
 }
 legend{
     font-size: 2rem;
-    color: #E08709;
+    color: #1c3b53;
     font-weight: 300;
 }
 label{
+    color: #000000;
     display: block;
     font-weight: 300;
     text-transform: uppercase;
@@ -86,7 +103,7 @@ input:not([type="submit"]):not([type="button"]):not([type="radio"]),
 select{
     padding: 13px;
     display: block;
-    width: 96%;
+    width: 100%;
     background-color: #e1e1e1;
     margin-bottom: 2rem;
     border: none;
