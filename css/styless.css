@@ -3,7 +3,6 @@ body{
     background: #304352;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #d7d2cc, #304352);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #d7d2cc, #304352); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
 }
 h1{
     color: #000000;
@@ -14,7 +13,7 @@ h1{
     margin: 0 auto;
 }
 .site-header{
-    background-color: #000000;
+    background-color: #000000c7;
     color: #ffffff;
     font-size: 25px;
 }
@@ -81,7 +80,8 @@ h1{
 /* Formulario */
 
 form p{
-    font-size: 15px;
+    color: #000000;
+    font-size: 16px;
     font-weight: 300;
     margin-left: 10px;
     text-transform: uppercase;
@@ -92,6 +92,7 @@ legend{
     font-weight: 300;
 }
 label{
+    font-size: 16px;
     color: #000000;
     display: block;
     font-weight: 300;
@@ -114,4 +115,9 @@ select{
     max-width: 30rem;
     display: flex;
     justify-content: space-between;
+}
+
+/*validacion */
+.error{
+    border: solid 2px #1c3b53;
 }
