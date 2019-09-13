@@ -117,7 +117,27 @@ select{
     justify-content: space-between;
 }
 
+/*anuncio*/
+.atras a{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: #000000b4;
+    font-weight: 300;
+    font-size: 30px;
+    margin-top: 15%;
+    transition: 0.3s;
+}
+.atras a:hover{
+    color: #1c3b53;
+    font-size: 35px;
+}
+
 /*validacion */
+
 .error{
-    border: solid 2px #1c3b53;
+    background: -webkit-linear-gradient(to right, #d69898, #8b1a1ac4);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #d69898, #8b1a1ac4);
+    color: #ffffff;
+    transition: 0.5s;
 }

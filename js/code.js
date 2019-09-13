@@ -20,19 +20,21 @@ function iniciar(){
 function campoVacio(identificador){
 
   let elemento = document.getElementById(identificador);
-
-  linmpiarError(elemento);
+  elemento.addEventListener("change", (e) => {
+    linmpiarError(elemento);
+  });
 
   if(!elemento.checkValidity()){
     if(elemento.validity.valueMissing){
       alert("El campo " + identificador + " no puede estar vacio");
     }
     if(elemento.validity.patternMismatch){
-      alert("El " + identificador + " debe tener entre 3 y 30 caracteres");
+      alert("El " + identificador + " debe tener entre 3 y 30 letras");
     }
-    error(elemento);
+    error(elemento, identificador);
     return false;
   }
+
   return true;
 }
 
@@ -40,7 +42,9 @@ function validarNumero(identificador){
 
   let elemento = document.getElementById(identificador);
 
-  linmpiarError(elemento);
+  elemento.addEventListener("change", (e) => {
+    linmpiarError(elemento);
+  });
 
   if(!elemento.checkValidity()){
     if(elemento.validity.valueMissing){
@@ -65,8 +69,22 @@ function validarNumero(identificador){
   return true;
 }
 
+function validarSexo(identificador){
+  let elemento = document.getElementById(identificador);
+  linmpiarError(elemento);
+
+  if(!elemento.checkValidity()){
+    if(!elemento.checked){
+      alert("Seleccione el Sexo");
+      error(elemento);
+      return false;
+    }
+  }
+  return true;
+}
+
 function validar(e){
-  if(campoVacio("nombre") && campoVacio("apellido") && validarNumero("edad") && validarNumero("cedula") && confirm("Pulsa aceptar si deseas enviar el formulario")){
+  if(campoVacio("nombre") && campoVacio("apellido") && validarNumero("edad") && validarNumero("cedula") && validarSexo("masculino") && confirm("Pulse aceptar si desea enviar el formulario")){
     return true;
   }
   else {
@@ -75,10 +93,10 @@ function validar(e){
   }
 }
 
+// Errores
+
 function error(elemento){
-  document.getElementById("mensajeError").innerHTML =
-  elemento.validationMessage;
-  elemento.className = "blue-gradient";
+  elemento.className = "error";
   elemento.focus();
 }
 
